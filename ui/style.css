@@ -20,3 +20,7 @@ body {
     height: 400px;
 }
 
+#container {
+    text-align:center;
+}
+
