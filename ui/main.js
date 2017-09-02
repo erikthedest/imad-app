@@ -7,6 +7,6 @@ function moveRight(){
   marginLeft = marginLeft + 10;
   img.style.marginLeft= marginLeft + "px";
 }
-img.onhover=function(){
+img.onload=function(){
   var interval = setInterval(moveRight,100) ; 
 };
