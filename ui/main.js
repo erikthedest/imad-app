@@ -33,7 +33,7 @@ submit.onclick=function(){
         }
     };
     var nameInput=document.getElementById('name');
-    var n=nameInput.value;
-    request.open('GET',"http://guptaayush3108.imad.hasura-app.io/sub?n="+n,true);
+    var name=nameInput.value;
+    request.open('GET',"http://guptaayush3108.imad.hasura-app.io/sub?name="+name,true);
     request.send(null);
 }
