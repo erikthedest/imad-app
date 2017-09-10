@@ -14,8 +14,7 @@ button.onclick=function() {
     request.open('GET',"http://guptaayush3108.imad.hasura-app.io/counter",true);
     request.send(null);
 }
-var nameInput=document.getElementById('name');
-var n=nameInput.value;
+
 var submit=document.getElementById('sub');
 submit.onclick=function(){
     var request = new XMLHttpRequest();
@@ -33,6 +32,8 @@ submit.onclick=function(){
             }
         }
     };
+    var nameInput=document.getElementById('name');
+    var n=nameInput.value;
     request.open('GET',"http://guptaayush3108.imad.hasura-app.io/counter",true);
     request.send(null);
 }
