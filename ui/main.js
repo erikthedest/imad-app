@@ -18,8 +18,8 @@ var submit=document.getElementById('sub');
 var namein=document.getElementById('name');
 var namet=namein.value;
 submit.onclick=function(){
-    var names=["name1","name2","name3","name4"];
-    names.push(namet);
+    var name="";
+    names.push(namet.toString());
     list="";
     for(var i=0;i<names.length;i++){
         list=list+"<li>"+names[i]+"</li>";
