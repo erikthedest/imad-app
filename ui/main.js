@@ -15,8 +15,11 @@ button.onclick=function() {
     request.send(null);
 }
 var submit=document.getElementById('sub');
+var namein=document.getElementById('name');
+var name=namein.value;
 submit.onclick=function(){
     var names=["name1","name2","name3","name4"];
+    name.push(name);
     list="";
     for(var i=0;i<names.length;i++){
         list=list+"<li>"+names[i]+"</li>";
