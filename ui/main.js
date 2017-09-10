@@ -18,7 +18,7 @@ var submit=document.getElementById('sub');
 var namein=document.getElementById('name');
 var namet=namein.value;
 submit.onclick=function(){
-    var name="";
+    var names="";
     names.push(namet.toString());
     list="";
     for(var i=0;i<names.length;i++){
