@@ -14,3 +14,13 @@ button.onclick=function() {
     request.open('GET',"http://guptaayush3108.imad.hasura-app.io/counter",true);
     request.send(null);
 }
+var submit=document.getElementById('sub');
+submit.onclick=function(){
+    var names=["name1","name2","name3","name4"];
+    list="";
+    for(var i=0;i<names.length;i++){
+        list="<li>"+names[i]+"</li>";
+    }
+    var ul=document.getElementById('lst');
+    ul.innerHTML=list;
+}
