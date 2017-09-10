@@ -12,7 +12,7 @@ app.get('/counter', function (req, res) {
 });
 
 var names=[];
-app.get('/sub', function (req,res) {
+app.get('/sub', function (req,res) {// /sub?name=xxxx
    var name=req.query.name;
    names.push(name);
    res.send(JSON.stringify(names));
