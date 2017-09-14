@@ -18,9 +18,12 @@ var content = {
     title: 'Article One | Aayush Gupta',
     heading: 'Article One',
     date: 'Sep 5, 2017',
-    content:`<p>Thi ThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThi</p>
-        <p>ThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdas
-        </p>`
+    content:`
+    <p>        
+        Thi ThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThi
+    </p>
+    <p> ThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdas
+    </p>`
 };
 function createTemplate(data){
     var title=data.title;
