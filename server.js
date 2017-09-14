@@ -9,16 +9,7 @@ var config = {
     host: 'db.imad.hasura-app.io',
     password: process.env.DB_PASSWORD
 }
-var pool = new Pool(config);
-app.get('/t', function(req,res){
-    pool.query('SELECT * FROM test', function(err,result){
-       if(err){
-           res.send('yupsss');
-       } else{
-           res.send(JSON.stringify(result,rows))
-       }
-    });
-});
+
 var app = express();
 app.use(morgan('combined'));
 
