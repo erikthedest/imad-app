@@ -32,6 +32,17 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var pool = new Pool(config);
+app.get('/t', function(req,res){
+    pool.query('SELECT * FROM test', function(err,result){
+       if(err){
+           res.send('yupsss');
+       } else{
+           res.send(JSON.stringify(result,rows))
+       }
+    });
+});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
