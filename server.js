@@ -23,38 +23,37 @@ var content = {
         </p>`
 };
 function createTemplate(data){
-var title=data.title;
-var date=data.date;
-var heading = data.heading;
-var contetn = data.content;
-var htmlTemplate = `
-<html>
-<head>
-<title>
-    ${title}
-</title>
-<meta name="viewport" contetn="width-device-width",initia-scale-1 />
-</head>
-<body>
-<div class="container">
-    <div>
-        <a href="/">Home</a>
+    var title=data.title;
+    var date=data.date;
+    var heading = data.heading;
+    var contetn = data.content;
+    var htmlTemplate = `
+    <html>
+    <head>
+    <title>
+        ${title}
+    </title>
+    <meta name="viewport" contetn="width-device-width",initia-scale-1 />
+    </head>
+    <body>
+    <div class="container">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr />
+        <h3>
+            ${heading}
+        </h3>
+        <div>
+            ${date}
+        </div>
+        <div>
+            ${content}
+        </div>
     </div>
-    <hr />
-    <h3>
-        ${heading}
-    </h3>
-    <div>
-        ${date}
-    </div>
-    <div>
-        ${content}
-    </div>
-</div>
-</body>
-</html>
-`;
-return htmlTemplate;
+    </body>
+    </html>`;
+    return htmlTemplate;
 }
 app.get('/art', function (req, res) {
   res.send(createTemplate(art));
