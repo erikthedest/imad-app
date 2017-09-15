@@ -14,7 +14,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var content = {
+var art = {
     title: 'Article One | Aayush Gupta',
     heading: 'Article One',
     date: 'Sep 5, 2017',
