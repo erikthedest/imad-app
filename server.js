@@ -14,8 +14,8 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles{
-    articleOne = {
+var articles = {
+    articleOne: {
         title: 'Article One | Aayush Gupta',
         heading: 'Article One',
         date: 'Sep 5, 2017',
@@ -25,8 +25,25 @@ var articles{
         </p>
         <p> ThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdas
         </p>`
-    };
-}
+    },
+    articleTwo :{
+        title: 'Article Two | Aayush Gupta',
+        heading: 'Article Two',
+        date: 'Sep 10, 2017',
+        content:`
+        <p> ThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdas
+        </p>`
+    },
+    articleThree: {
+        title: 'Article Three | Aayush Gupta',
+        heading: 'Article Three',
+        date: 'Sep 15, 2017',
+        content:`
+        <p> ThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasc....................
+        </p>`
+    }
+};
+
 function createTemplate(data){
     var title=data.title;
     var date=data.date;
@@ -61,8 +78,9 @@ function createTemplate(data){
     return htmlTemplate;
 }
 
-app.get('/art', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+    //articleName=article-one
+    res.send(createTemplate(articles(articleName)));
 });
 
 var pool = new Pool(config);
