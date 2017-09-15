@@ -58,12 +58,14 @@ function createTemplate(data){
     </html>`;
     return htmlTemplate;
 }
+
 app.get('/art', function (req, res) {
   res.send(createTemplate(art));
 });
+
 var pool = new Pool(config);
-app.get('/test', function (req, res) {
-    pool.query('SELECT * FROM "test"', function(err,result){
+app.get('/test-db', function (req, res) {
+    pool.query('SELECT * FROM test', function(err,result){
         if(err){
             res.status(500).send(err.toString());
         } else{
