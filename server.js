@@ -14,17 +14,19 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var art = {
-    title: 'Article One | Aayush Gupta',
-    heading: 'Article One',
-    date: 'Sep 5, 2017',
-    content:`
-    <p>        
-        Thi ThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThi
-    </p>
-    <p> ThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdas
-    </p>`
-};
+var articles{
+    articleOne = {
+        title: 'Article One | Aayush Gupta',
+        heading: 'Article One',
+        date: 'Sep 5, 2017',
+        content:`
+        <p>        
+            Thi ThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThiThi
+        </p>
+        <p> ThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdasckThiisdas
+        </p>`
+    };
+}
 function createTemplate(data){
     var title=data.title;
     var date=data.date;
@@ -60,7 +62,7 @@ function createTemplate(data){
 }
 
 app.get('/art', function (req, res) {
-  res.send(createTemplate(art));
+  res.send(createTemplate(articleOne));
 });
 
 var pool = new Pool(config);
@@ -75,6 +77,18 @@ app.get('/test-db', function (req, res) {
             res.send(JSON.stringify(result.rows));
         }
     });
+});
+
+app.get('/artice', function (req, res) {
+    
+    pool.query("SELECT * FROM article",req.parans.aarticleName, function (err, result) {
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringify(result.rows));
+        }
+    });
+  res.send(createTemplate(art));
 });
 
 
