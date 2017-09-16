@@ -114,7 +114,7 @@ function hashed(input,salt){
     var hashes=crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
     return hashes.toString('hex');
 }
-app.get('hash/:input', function(req,res){
+app.get('/hash/:input', function(req,res){
     var hash=hashed(req.params.input,'the-random-string');
     res.send('hash');
 });
