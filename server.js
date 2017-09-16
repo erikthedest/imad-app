@@ -116,7 +116,7 @@ function hashed(input,salt){
 }
 app.get('/hash/:input', function(req,res){
     var hash=hashed(req.params.input,'the-random-string');
-    res.send('hash');
+    res.send(hash);
 });
 
 var counter=0;
